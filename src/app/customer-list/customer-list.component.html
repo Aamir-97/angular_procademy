@@ -1,0 +1,30 @@
+<div class="customer-details">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>age</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th><button class="btn btn-success" (click)="showAddOrEditUserPopUp()"> + Add</button></th>
+        </tr>
+        <tr *ngFor="let customer of customers">
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.age }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.email }}</td>
+            <td>
+                <!-- <button (click)="onCustomerSelect(customer)" class="btn btn-primary">Select</button> -->
+                <i class="fa-solid fa-pen-to-square" (click)="onCustomerSelect(customer)"></i>
+                <!-- <div style="margin-left: 10px"></div> -->
+                <i class="fa-solid fa-trash" style="margin-left: 10px" (click)="deleteCustomer(customer.id)"></i>
+                <i class="fa-solid fa-eye" style="margin-left: 10px" (click)="viewCustomer(customer)"></i>
+            </td>
+        </tr>
+    </table>
+    <app-customer-details></app-customer-details>
+    <!-- <p *ngIf="selectedCustomer != null">Selected Customer : {{ selectedCustomer.name }}</p> -->
+</div>
+
+<app-addoredit-customer *ngIf="isPopupVisible" (closePopupEvent)="closePopup()"></app-addoredit-customer>

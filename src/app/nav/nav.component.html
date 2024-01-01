@@ -1,0 +1,16 @@
+<div class="nav-bar">
+    <div class="nav-logo">
+        <!-- <img src="./../../assets/images/project-image.jpg" alt="logo" class="logo"> -->
+        <h2>eShopping</h2>
+    </div>
+    <div class="nav-links">
+        <li routerLinkActive="active"> <a routerLink="/home">Home</a> </li>
+        <li [routerLinkActive]="'active'"> <a [routerLink]="'/contactUs'"  >Contact us</a> </li>
+        <li routerLinkActive="active"> <a routerLink="/about">About</a> </li>
+        <li routerLinkActive="active"> <a routerLink="/products">Product</a> </li>
+        <li routerLinkActive="active"> <a [routerLink]="['/profile']">Profile</a> </li>  
+        <!-- <li routerLinkActive="active"> <a routerLink="" fragment="profile">Profile</a> </li> -->
+        <!-- <li [routerLinkActive]="'active'"> <a routerLink="" fragment="contactUs" >Contact us</a> </li> -->
+        <!-- <li routerLinkActive="active"> <a routerLink="" fragment="home">Home</a> </li> -->
+    </div>
+</div>

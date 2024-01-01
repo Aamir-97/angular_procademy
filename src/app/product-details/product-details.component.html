@@ -1,0 +1,38 @@
+<div class="product-details-container">
+    <div class="product-change">
+        <div>
+            <button class="product-change-button" routerLink="/products/product-details/1">
+                <i class="fa-solid fa-backward-fast"></i>First Product
+            </button>
+            <span> space </span>
+            <button (click)="previousProduct(p.id)" class="product-change-button">
+                <i class="fa-solid fa-backward"></i>Previos Product
+            </button>
+        </div>
+        <button (click)="nextProduct(p.id)" class="product-change-button">
+            Next Product<i class="fa-solid fa-forward"></i>
+        </button> 
+    </div>
+    <div class="image-container"><img [src]="p.image" alt="ProdcutImage" style="max-height: 200px; max-width: 200px"></div>
+    <div>
+        <div class="name-container">
+            <h6 *ngIf="!onEditMode">{{ p.name }} -- {{p.id}}</h6>
+            <input type="text" name="" id="" [(ngModel)]="p.name" *ngIf="onEditMode">
+        </div>
+        <div class="detailContainer">
+            <div class="details" [ngStyle]="{color: p.available === 'Available' ? 'Green' : 'Red'}">{{ p.available }}
+            </div>
+            <div class="details"><b>Price:</b>{{ p.price }}</div>
+            <div class="details"><b>Color:</b>{{ p.color }}</div>
+        </div>
+    </div>
+    <div class="button-options">
+        <button class="btn btn-warning" *ngIf="p.available === 'Available'; else notifyMe">Buy Now</button>
+        <ng-template #notifyMe>
+            <button class="btn btn-danger">Notify Me</button>
+        </ng-template>
+        <button class="product-change-button" (click)="appendQuaryParam()"><i class="fa-solid fa-pen-to-square"></i> Edit </button>
+        <button class="product-change-button"  (click)="onSave()" *ngIf="onEditMode" ><i class="fa-solid fa-floppy-disk"></i> Save </button>
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+td, th {
+    padding: 5px;
+    border: 1px solid black;
+
+}
+
+table{
+    border: 1px solid black;
+    /* margin-top: 20px; */
+    /* padding: 20px; */
+}
+
+.customer-details{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.fa-solid:hover{
+    cursor: pointer;
+}

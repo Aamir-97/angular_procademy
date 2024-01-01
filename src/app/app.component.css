@@ -1,0 +1,13 @@
+.main-container {
+    background-color: antiquewhite;
+}
+
+.sub-container {
+    margin: 0px auto;
+    width: 80%;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}

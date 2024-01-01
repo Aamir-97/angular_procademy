@@ -1,0 +1,38 @@
+<app-search (searchValueChanged)="onSearchValueChanged($event)"></app-search>
+
+<app-filter [all]="getTotalProducts()" [available]="getAvailableProducts()" [notAvailable]="getNotAvailable()" (filterRadioButtonSelectionChanged)="onFilterRadioButonChanged($event)">
+</app-filter>
+
+<ng-container *ngFor="let p of products">
+    <ng-container *ngIf="selectedProductsFilter === 'all' || selectedProductsFilter === p.available">
+        <div class="product-container" *ngIf="searchValueData === '' || p.name.toLowerCase().includes(searchValueData)"  appHover [mostpricedstyle]="p.price === mostPricedProduct.price">
+            <!-- <div class="product-container" *ngIf="searchValueData === '' || p.name.toLowerCase().includes(searchValueData)" > -->
+            <div class="image-container"><img [src]="p.image" alt="" style="max-height: 50px; max-width: 50px"></div>
+            <div>
+                <div class="name-container">
+                    <h6>{{ p.name }}</h6>
+                </div>
+                <div class="detailContainer">
+                    <div class="details" [ngStyle]="{color: p.available === 'Available' ? 'Green' : 'Red'}">{{ p.available }}
+                    </div>
+                    <div class="details"><b>Price:</b>{{ p.price }}</div>
+                    <div class="details"><b>Color:</b>{{ p.color }}</div>
+                </div>
+            </div>
+            <div class="options">
+                <button class="btn btn-success" routerLink="/products/product-details/{{p.id}}">Show Details</button>
+                <button class="btn btn-warning" *ngIf="p.available === 'Available'; else notifyMe" routerLink="/products/product-buy/{{p.id}}">Buy Now</button>
+                <ng-template #notifyMe>
+                    <button class="btn btn-danger">Notify Me</button>
+                </ng-template>
+            </div>
+        </div>
+        <!-- <div></div> -->
+
+    </ng-container>
+
+</ng-container>
+
+<div>Book</div>
+
+<!-- <router-outlet></router-outlet> -->

@@ -1,0 +1,22 @@
+.header {
+    /* background-color: antiquewhite; */
+    background-color: white;
+    display: flex;
+    /* flex-wrap: nowrap; */
+    padding: 20px 40px;
+    /* justify-content: center;
+    align-items: center;
+    align-content: space-between; */
+}
+
+.site-image {
+    display: flex;
+    width: 120px;
+    height: 120px;
+}
+
+.site-slogan{
+    width: 50vw;
+    margin-left: 100px;
+    text-align: center;
+}

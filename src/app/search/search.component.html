@@ -1,0 +1,29 @@
+<div appSampleCustom appHover [defaultColor]="'lightblue'">
+  <p>Set background color</p>
+</div>
+<!-- <div appSampleCustom appHover><p>Set background color</p></div> -->
+<div [ngClass]="{class1 : condition1 , class2: condition2}">Set dynamic style to div background color - Click 'Print'</div>
+
+<button class="btn-notice" (click)="DisplayNotice()">
+  Show Notice
+</button>
+<p>From_main - ennathukku</p>
+<p>From_main - sub_main</p>
+<div *appIf="display" class="notice-content">
+  <p>Custom Structural directive </p>
+</div>
+<p></p>
+
+<div class="mb-3 row">
+  <div class="col">
+    <label for="search" class="col-form-label">Search :</label>
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" id="search" [(ngModel)]="searchValue" (input)="getTheSearchValue()" #searchfield (keyup)="0" />
+
+  </div>
+  <div class="col">
+    <button class="btn btn-success" (click)="sayHello(searchfield)">Print</button>
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="main-container">
+  <div class="sub-container">
+    <!-- <app-upgrades></app-upgrades> -->
+    <app-customer-list #customer></app-customer-list>
+    <p *ngIf="customer.selectedCustomer != null"> You have selected : {{ customer.selectedCustomer.name }}</p>
+    <app-products></app-products>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="filter-cmoponent">
+    <span>Fliter : </span>
+
+    <input type="radio" name="filter" value="all" [(ngModel)]="selectedRadioButtonValue" (change)="onRadioButtonSelectionChanged()">
+    <span>{{ 'All Courese(' + all + ')'}}</span>
+    <h1></h1>
+
+    <input type="radio" name="filter" value="Available" [(ngModel)]="selectedRadioButtonValue" (change)="onRadioButtonSelectionChanged()">
+    <span>{{ 'Available(' + available + ')'}}</span>
+    <h1></h1>
+
+    <input type="radio" name="filter" value="Not Available" [(ngModel)]="selectedRadioButtonValue" (change)="onRadioButtonSelectionChanged()">
+    <span>{{ 'Not Available(' + notAvailable + ')'}}</span>
+    <h1></h1>
+</div>
+
+<div class="filteredBy" [ngSwitch]="selectedRadioButtonValue">
+    <p *ngSwitchDefault>Your are filtering by All Product</p>
+    <p *ngSwitchCase="'Available'">Your are filtering by Available courses</p>
+    <p *ngSwitchCase="'Not Available'">Your are filtering by  Not available courses</p>
+</div>
